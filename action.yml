@@ -17,6 +17,11 @@ inputs:
     description: The token to authenticate to GitHub
     required: true
 
+# Define your outputs here.
+outputs:
+  comment_body:
+    description: The markdown body of the comment that was created
+
 runs:
-  using: node22
+  using: node20
   main: dist/index.js

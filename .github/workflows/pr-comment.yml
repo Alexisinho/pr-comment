@@ -1,16 +1,14 @@
 name: PR Comment
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, reopened, synchronize]
 
 jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Post PR Changes Comment
-        uses: Alexisinho/pr-comment@v1
+      - uses: ./
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}

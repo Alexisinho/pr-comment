@@ -1,24 +1,22 @@
-name: The name of your action here
-description: Provide a description here
-author: Your name or organization here
-
-# Add your action's branding here. This will appear on the GitHub Marketplace.
-branding:
-  icon: heart
-  color: red
+name: pr-comment
+description: pr-comment action that shows changes in PR
+author: Alexisinho
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: Your input description here
+  owner:
+    description: The owner of the repo (user or org)
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: Your output description here
+  repo: 
+    description: The name of the repo
+    required: true
+  pr_number:
+    description: The number of the PR
+    required: true
+  token:
+    description: The token to authenticate to GitHub
+    required: true
 
 runs:
-  using: node24
+  using: node22
   main: dist/index.js
